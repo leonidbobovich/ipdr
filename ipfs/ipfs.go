@@ -10,6 +10,8 @@ import (
 	"strings"
 	"time"
 
+	"runtime/debug"
+
 	api "github.com/ipfs/go-ipfs-api"
 	log "github.com/sirupsen/logrus"
 )
@@ -176,6 +178,8 @@ func spawnIpfsDaemon(ready chan bool) error {
 
 // NormalizeGatewayURL normalizes IPFS gateway URL
 func NormalizeGatewayURL(urlstr string) string {
+	debug.PrintStack()
+	fmt.Println("[LEONID] ",urlstr)
 	if !strings.HasPrefix(urlstr, "http") {
 		urlstr = "http://" + urlstr
 	}

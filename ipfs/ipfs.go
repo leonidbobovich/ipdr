@@ -10,8 +10,6 @@ import (
 	"strings"
 	"time"
 
-	"runtime/debug"
-
 	api "github.com/ipfs/go-ipfs-api"
 	log "github.com/sirupsen/logrus"
 )
